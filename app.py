@@ -26,7 +26,7 @@ test_out = pickle.load(open("test_outv1", "rb"))
 feat_num = pickle.load(open("feat_numv1", "rb"))
 feat_cat = pickle.load(open("feat_catv1", "rb"))
 data_pipeline = pickle.load(open("data_pipelinev1", "rb"))
-#lr = pickle.load(open("lr_modelv1", "rb"))
+lr = pickle.load(open("lr_model", "rb"))
 gb = pickle.load(open("gb_model", "rb"))
 #xg_model = pickle.load(open("final_xg_model2", "rb"))
 #xg_model = pickle.load(open("pima.pickle.dat", "rb"))
@@ -142,7 +142,7 @@ def predict():
     xtest1 = pd.concat([test_inp, test])
 
     xtest1_clean = data_pipeline.fit_transform(xtest1)
-    ypred = gb.predict(xtest1_clean)
+    ypred = lr.predict(xtest1_clean)
     if ypred[-1]==0:
 
         return render_template('result.html',prediction_text="The client will NOT subscribe term deposit")
