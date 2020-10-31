@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://use.fontawesome.com/ba5ad5b5a1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Bank Deposit subscription</title>
+    <style>
+        form{
+        height:830px;
+        width:600px;
+        margin:0px auto;
+        position:relative;
+        top:200px;
+        background:rgba{0,0,0,0.4};
+        border:1px white solid;
+        border-radius:10px;
+        }
+        body{
+        background-image:url(https://image.freepik.com/free-vector/banking-service-background-bank-building-icon-made-with-currency-symbols-dollar-euro-yen-pound-icons_127544-803.jpg);
+        background-position-x:50%;
+        background-position-y:50%;
+        }
+        .register{
+        margin:auto;
+        background:#fff;
+        max-width:350px;
+        padding:10px;
+        border-radius:4px;
+        }
+        .button{
+        width:100%;
+        padding:10px;
+        margin:10px;
+        border-radius:4px;
+        border:none;
+        background:orange;
+        font-size:20px;
+
+        }
+        .test{
+        height:40px;
+        width:600px;
+        background-color: #008CBA;
+        font-size: 30px;
+        }
+
+        label{
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 400px;
+        text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div  class=""register>
+        <form  class="modal-content" action="{{ url_for('predict')}}" method="post">
+            <h1>Bank Deposit Subscription</h1>
+            <label>Age:</label>
+            <input id="first" name="age" type="number "><br><br>
+
+            <label>Types of job:</label>
+            <select type="text" name="job_type"  required="required">
+                <option value="unknown">unknown</option>
+                <option value="unemployed">unemployed</option>
+                <option value="management">management</option>
+                <option value="housemaid">housemaid</option>
+                <option value="entrepreneur">entreprenuer</option>
+                <option value="student">student</option>
+                <option value="blue-collar">blue-collar</option>
+                <option value="self-employed">self-employed</option>
+                <option value="retired">retired</option>
+                <option value="technician">technician</option>
+                <option value="services">services</option>
+                <option value="admin.">admin</option>
+            </select><br><br>
+            <label>Marital Status:</label>
+                <select type="text" name="marital"  required="required">
+                <option value="married">married</option>
+                <option value="divorced">divorced</option>
+                <option value="single">single</option>
+            </select><br><br>
+
+            <label>Education:</label>
+                <select type="text" name="education"  required="required">
+                <option value="unknown">unknown</option>
+                <option value="secondary">secondary</option>
+                <option value="primary">primary</option>
+                <option value="tertiary">tertiary</option>
+            </select><br><br>
+
+            <label>Has credit default or not:</label>
+                <select type="text" name="default"  required="required">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br>
+            <label>Average yearly balance, in euros :</label>
+            <input id="first" name="balance" type="number "><br><br>
+
+            <label>Has housing loan or not:</label>
+                <select type="text" name="housing_loan"  required="required">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br>
+
+            <label>Has personal loan or not:</label>
+                <select type="text" name="personal_loan"  required="required">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br>
+
+
+
+
+            <label>Contact communication type:</label>
+               <select type="text" name="contact"  required="required">
+                <option value="unknown">unknown</option>
+                <option value="telephone">telephone</option>
+                <option value="cellular">cellular</option>
+            </select><br><br>
+
+            <label>Last contact day of the month:</label>
+            <input  name="day" type="number "><br><br>
+
+            <label>Last contact month of year:</label>
+               <select type="text" name="month"  required="required">
+                <option value="jan">jan</option>
+                <option value="feb">feb</option>
+                <option value="mar">mar</option>
+                <option value="apr">apr</option>
+                <option value="may">may</option>
+                <option value="jun">jun</option>
+                <option value="jul">jul</option>
+                <option value="aug">aug</option>
+                <option value="sep">sep</option>
+                <option value="oct">oct</option>
+                <option value="nov">nov</option>
+                <option value="dec">dec</option>
+            </select><br><br>
+
+            <label>Last contact duration, in seconds:</label>
+            <input  name="duration" type="number "><br><br>
+
+            <label>Number of contacts performed during this campaign:</label>
+            <input  name="campaign" type="number "><br><br>
+
+            <label>Client has contected before or not:</label>
+                <select type="text" name="pdays"  required="required">
+                <option value="not_contacted">not_contected</option>
+                <option value="contacted">contacted</option>
+            </select><br><br>
+
+            <label>Number of contacts performed before this campaign:</label>
+            <input  name="previous" type="number "><br><br>
+
+            <label>Outcome of the previous marketing campaign:</label>
+               <select type="text" name="poutcome"  required="required">
+                <option value="unknown">unknown</option>
+                <option value="failure">failure</option>
+                <option value="other">other</option>
+                <option value="success">success</option>
+            </select><br>
+
+            <br><br>
+            <button  class="test" type="submit ">Predict</button>
+            <br><br>
+        </form>
+
+    </div>
+</body>
+</html>
