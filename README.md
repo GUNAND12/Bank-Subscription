@@ -2,5 +2,5 @@
 
 #### This project is to predict whether the client will subscribe term deposit or not..
 
-##### application link
+##### Application link:-
 https://banksubscription.herokuapp.com/
