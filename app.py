@@ -141,7 +141,7 @@ def predict():
     test.columns = test_inp.columns
     xtest1 = pd.concat([test_inp, test])
 
-    xtest1_clean = data_pipeline.fit_transform(xtest1)
+    xtest1_clean = data_pipeline.transform(xtest1)
     ypred = lr.predict(xtest1_clean)
     if ypred[-1]==0:
 
